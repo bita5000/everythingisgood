@@ -1,0 +1,31 @@
+{
+    "name": "everythingisgood",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/bita5000/everythingisgood.git",
+    "author": "bita5000 <das2ome@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/react": "^18.2.28",
+        "@types/react-dom": "^18.2.13",
+        "babel-plugin-styled-components": "^2.1.4",
+        "clean-webpack-plugin": "^4.0.0",
+        "css-loader": "^6.8.1",
+        "file-loader": "^6.2.0",
+        "html-loader": "^4.2.0",
+        "html-webpack-plugin": "^5.5.3",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "style-loader": "^3.3.3",
+        "styled-components": "^6.0.9",
+        "ts-loader": "^9.5.0",
+        "typescript": "^5.2.2",
+        "webpack": "^5.88.2",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^4.15.1"
+    },
+    "scripts": {
+        "start": "webpack-dev-server --config webpack.config.js --mode development",
+        "build": "webpack --config webpack.config.js --mode production"
+    }
+}

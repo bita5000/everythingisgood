@@ -1,0 +1,2 @@
+TypeScript에서 Babel은 일반적으로 필요하지 않음
+-> TS 컴파일러(tsc)를 통해 JavaScript로 변환할 수 있음
