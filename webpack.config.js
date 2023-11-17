@@ -3,11 +3,14 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
+    mode: "development",
     entry: "./src/index.tsx",
     output: {
-        filename: "bundle.js",
-        path: path.resolve(__dirname, "dist")
+        path: path.resolve("./dist"),
+        filename: "bundle.js"
+        // publicPath: "/"
     },
+
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx"],
         alias: {
@@ -33,8 +36,43 @@ module.exports = {
                 use: "html-loader"
             },
             {
-                test: /\.(png|svg|jpg|gif)$/,
-                use: "file-loader"
+                test: /\.(png|jpg|gif)$/i,
+                use: {
+                    loader: "file-loader",
+                    options: {
+                        name: "[name].[ext]",
+                        outputPath: "images/"
+                    }
+                }
+            },
+            {
+                test: /\.svg$/i,
+                use: [
+                    {
+                        loader: "@svgr/webpack",
+                        options: {
+                            // name: "[name].[ext]",
+                            // outputPath: "images/"
+                        }
+                    },
+                    {
+                        loader: "file-loader",
+                        options: {
+                            name: "[name].[ext]",
+                            outputPath: "images/"
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(woff|woff2)$/i,
+                use: {
+                    loader: "file-loader",
+                    options: {
+                        name: "[name].[ext]",
+                        outputPath: "fonts/"
+                    }
+                }
             }
         ]
     },
@@ -50,6 +88,7 @@ module.exports = {
         },
         liveReload: true,
         port: 3000,
-        open: true
+        open: true,
+        historyApiFallback: true
     }
 };

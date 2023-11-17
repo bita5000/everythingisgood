@@ -1,23 +1,21 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
+import Join from "./Pages/Join";
+import SelectMode from "./Pages/SelectMode";
 
 function App() {
-    console.log("hi");
     return (
-        <div>
-            <First>hello, world!</First>
-            <Second>
-                해당 세팅은 TypeScript, file-loader, styled-components를 사용할
-                수 있습니다
-            </Second>
-        </div>
+        <>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/join" element={<Join />} />
+                <Route path="/select-mode" element={<SelectMode />} />
+            </Routes>
+        </>
     );
 }
-
-const First = styled.h1`
-    color: powderblue;
-`;
-
-const Second = styled.h4``;
-
 export default App;
