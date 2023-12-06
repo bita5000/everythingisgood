@@ -9,6 +9,7 @@
         "@svgr/webpack": "^8.1.0",
         "@types/react": "^18.2.28",
         "@types/react-dom": "^18.2.13",
+        "@types/styled-components": "^5.1.32",
         "babel-plugin-styled-components": "^2.1.4",
         "clean-webpack-plugin": "^4.0.0",
         "css-loader": "^6.8.1",

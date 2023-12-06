@@ -83,9 +83,9 @@ module.exports = {
         })
     ],
     devServer: {
-        static: {
-            directory: path.resolve(__dirname, "public")
-        },
+        // static: {
+        //     directory: path.resolve(__dirname, "public")
+        // },
         liveReload: true,
         port: 3000,
         open: true,

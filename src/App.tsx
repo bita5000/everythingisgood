@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import styled from "styled-components";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Join from "./Pages/Join";
@@ -10,10 +9,10 @@ function App() {
     return (
         <>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/select-mode" element={<SelectMode />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/join" element={<Join />} />
-                <Route path="/select-mode" element={<SelectMode />} />
+                <Route path="/" element={<Home />} />
             </Routes>
         </>
     );
