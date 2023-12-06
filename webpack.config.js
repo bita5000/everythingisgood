@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const WorkboxPlugin = require("workbox-webpack-plugin");
 
 module.exports = {
     mode: "development",
@@ -79,13 +80,18 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            template: "./public/index.html"
+            template: "./public/index.html",
+            title: "Progressive Web Application"
+        }),
+        new WorkboxPlugin.GenerateSW({
+            clientsClaim: true,
+            skipWaiting: true
         })
     ],
     devServer: {
-        // static: {
-        //     directory: path.resolve(__dirname, "public")
-        // },
+        static: {
+            directory: path.resolve(__dirname, "public")
+        },
         liveReload: true,
         port: 3000,
         open: true,
